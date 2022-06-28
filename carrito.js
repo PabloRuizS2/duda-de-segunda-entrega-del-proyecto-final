@@ -31,7 +31,7 @@ botonFinalizar.setAttribute("class", "boton");
 botonFinalizar.onclick = () => {
   const precioFinal = montoTotalCompra.innerText;
   
-  Swal.fire({
+  Swal.fire ({
     title: '¿Seguro que queres finalizar tu compra?',
     text: `Total a abonar: $${precioFinal}`,
     showCancelButton: true,
