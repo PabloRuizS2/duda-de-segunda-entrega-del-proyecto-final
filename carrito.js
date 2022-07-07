@@ -92,7 +92,7 @@ function vaciarCarrito() {
 }
 
 function cargarCarrito() {
-  let carrito = JSON.parse(localStorage.getItem("carrito"));
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   if (carrito == null) {
     return [];
   } else {
