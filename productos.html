@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>GamerP</title>
+    <link rel="icon" href="./imagenes/images.png" />
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
@@ -13,23 +14,23 @@
 <body>
     <header>
         <nav>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="#contact">Contactos</a></li>
-            <li style="float:right"><a class="active" href="">carrito</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li style="float:right"><a class="active" href="IncioDeSesion.html">Login</a></li>
         </nav>
       </header>
       <section>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="3000">
-                <img src="imagenes/pro1.png" class="d-block w-100" alt="...">
+              <div class="carousel-item active" data-bs-interval="1000">
+                <img src="imagenes/42.png" class="d-block w-100" alt="...">
               </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="imagenes/pro2.png" class="d-block w-100" alt="...">
+              <div class="carousel-item" data-bs-interval="1000">
+                <img src="imagenes/43.png" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="imagenes/pro3.jpg" class="d-block w-100" alt="...">
+                <img src="imagenes/44.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -42,10 +43,56 @@
             </button>
           </div>
       </section>
-      
+      <div id="container-general">
+        <section id="section-productos"></section>
+        <section id="section-carrito"></section>
+    </div>
 
+<footer>
+  <div class="container__footer">
+    <div class="box__footer">
+        <div class="logo">
+            <img src="Images/logo-magtimus.png" alt="">
+        </div>
+        <div class="terms">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas impedit cum cumque velit libero officiis quam doloremque reprehenderit quae corporis! Delectus architecto officia praesentium atque laudantium, nam deleniti sapiente deserunt.</p>
+        </div>
+    </div>
+    <div class="box__footer">
+        <h2>Soluciones</h2>
+        <a href="https://www.google.com">App Desarrollo</a>
+        <a href="#">App Marketing</a>
+        <a href="#">IOS Desarrollo</a>
+        <a href="#">Android Desarrollo</a>
+    </div>
 
+    <div class="box__footer">
+        <h2>Compañia</h2>
+        <a href="#">Acerca de</a>
+        <a href="#">Trabajos</a>
+        <a href="#">Procesos</a>
+        <a href="#">Servicios</a>              
+    </div>
 
+    <div class="box__footer">
+        <h2>Redes Sociales</h2>
+        <a href="#"> <i class="fab fa-facebook-square"></i> Facebook</a>
+        <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+        <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+    </div>
+
+</div>
+
+<div class="box__copyright">
+    <hr>
+    <p>Todos los derechos reservados © 2021 <b>GamerP</b></p>
+</div> 
+</footer>
+<script src="js/productos.js"></script>
+<script src="js/carrito.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://sweetalert2.all.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

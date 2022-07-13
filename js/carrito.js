@@ -1,6 +1,39 @@
 
-let carrito = cargarCarrito();
+class Producto {
+  constructor(id,nombre,precio,foto){
+      this.id = id
+      this.nombre = nombre
+      this.precio = precio
+      this.foto = foto
+  }
+}
 
+const productos = []
+
+const obtenerProductos = async () => {
+  let response = await fetch("/data.json")
+  let data = await response.json()
+
+  data.forEach(ele =>{  
+    productos.push(new Producto(ele.id,ele.nombre,ele.precio,ele.foto))
+  })
+for (const producto of productos) {
+   let container = document.createElement("div");
+  container.setAttribute("class", "card-product");
+  container.innerHTML = ` <div class="img-container">
+                            <img src="${producto.foto}" alt="${producto.nombre}" class="img-product"/>
+                            </div>
+                            <div class="info-producto">
+                            <p class="font">${producto.nombre}</p>
+                            <strong class="font">$${producto.precio}</strong>
+                            <button class="boton" id="btn${producto.id}"> Agregar al carrito </button>
+                            </div>`;
+  sectionProductos.appendChild(container);
+ 
+  document.getElementById(`btn${producto.id}`).onclick = () => agregarAlCarrito(`${producto.id}`);
+}}
+obtenerProductos()
+let carrito = cargarCarrito();
 
 let sectionProductos = document.getElementById("section-productos");
 let sectionCarrito = document.getElementById("section-carrito");
@@ -52,21 +85,6 @@ botonFinalizar.onclick = () => {
 }
 
 
-for (const producto of productos) {
-  let container = document.createElement("div");
-  container.setAttribute("class", "card-product");
-  container.innerHTML = ` <div class="img-container">
-                            <img src="${producto.foto}" alt="${producto.nombre}" class="img-product"/>
-                            </div>
-                            <div class="info-producto">
-                            <p class="font">${producto.nombre}</p>
-                            <strong class="font">$${producto.precio}</strong>
-                            <button class="boton" id="btn${producto.id}"> Agregar al carrito </button>
-                            </div>`;
-  sectionProductos.appendChild(container);
- 
-  document.getElementById(`btn${producto.id}`).onclick = () => agregarAlCarrito(`${producto.id}`);
-}
 
 
 function agregarAlCarrito(id) {
