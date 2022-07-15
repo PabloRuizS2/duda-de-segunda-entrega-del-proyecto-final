@@ -11,9 +11,8 @@ class Producto {
 const productos = []
 
 const obtenerProductos = async () => {
-  let response = await fetch("/json/productos.json")
+  let response = await fetch('./json/productos.json')
   let data = await response.json()
-
   data.forEach(ele =>{  
     productos.push(new Producto(ele.id,ele.nombre,ele.precio,ele.foto))
   })

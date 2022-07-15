@@ -362,7 +362,7 @@ h1{
                 font-size: 1.5rem;
                 align-items: center; }
         .section-contacto .form-contacto section {
-          background-color: #d7c1d7d5;
+          background-color: #067014d5;
           padding: 40px;
           border-radius: 10px;
           width: 90vh; }
@@ -394,5 +394,5 @@ h1{
             .section-contacto .form-contacto section form .botones {
               width: 100%; }
               .section-contacto .form-contacto section form .botones:hover {
-                color: #d7c1d7d5; }
+                color: #10af10d5; }
     
