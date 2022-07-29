@@ -1,4 +1,5 @@
 
+
 class Producto {
   constructor(id,nombre,precio,foto){
       this.id = id
@@ -32,17 +33,22 @@ for (const producto of productos) {
   document.getElementById(`btn${producto.id}`).onclick = () => agregarAlCarrito(`${producto.id}`);
 }}
 obtenerProductos()
-let carrito = cargarCarrito();
 
+
+
+
+let carrito = cargarCarrito();
 let sectionProductos = document.getElementById("section-productos");
 let sectionCarrito = document.getElementById("section-carrito");
 
 
+
 let totalCompra = document.createElement("div");
-totalCompra.innerHTML = "<h2>Total: $</h2>";
+totalCompra.innerHTML = `<h2>Total: $</h2>`;
 sectionCarrito.appendChild(totalCompra);
 
 let montoTotalCompra = document.createElement("h2");
+
 montoTotalCompra.innerText = "0";
 totalCompra.appendChild(montoTotalCompra);
 
@@ -51,7 +57,7 @@ cantidadProductos.innerHTML = "<h3>Cantidad de productos: </h3>";
 sectionCarrito.appendChild(cantidadProductos);
 
 let cantProductos = document.createElement("h3");
-cantProductos.innerText = "0";
+cantProductos.innerText = `${carrito.length}`;
 cantidadProductos.appendChild(cantProductos);
 
 let botonFinalizar = document.createElement("button");
@@ -83,22 +89,23 @@ botonFinalizar.onclick = () => {
   })
 }
 
-
-
-
 function agregarAlCarrito(id) {
   carrito.push(productos.find(p => p.id == id));
   localStorage.setItem("carrito", JSON.stringify(carrito));
   calcularTotalCarrito();
 }
 
+
 function calcularTotalCarrito() {
+ 
   let total = 0;
+  
   for (const producto of carrito) {
     total += producto.precio;
   }
   montoTotalCompra.innerText = total;
   cantProductos.innerText = carrito.length;
+  return total;
 }
 
 function vaciarCarrito() {
@@ -106,6 +113,7 @@ function vaciarCarrito() {
   cantProductos.innerText = "0";
   localStorage.clear();
   carrito = [];
+  
 }
 
 function cargarCarrito() {
@@ -116,3 +124,4 @@ function cargarCarrito() {
     return carrito;
   }
 }
+
